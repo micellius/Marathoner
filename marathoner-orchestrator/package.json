@@ -9,5 +9,9 @@
     "socket.io": "0.9.16",
     "express": "3.5.1",
     "jade": "*"
-  }
+  },
+  "devDependencies": {
+    "bower": "0.5.x"
+  },
+  "engine": "node >= 0.10.26"
 }
