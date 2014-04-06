@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+        div.container
+            div.navbar-left
+                img.logo(src="images/marathoner-logo.png")
+                a.navbar-brand(href="#")= title
+            div.navbar-right.navbar-text InnoJam 2014
+    div.container(ng-controller="dashboardController")
+        div.col-sm-12
+            div.panel.panel-default
+                div.panel-heading
+                    h3.panel-title Load Graph
+                div.panel-body
+                    div(load-graph="graph")
+        div.col-sm-6
+            div.panel.panel-default
+                div.panel-heading
+                    h3.panel-title Agents
+                div.panel-body
+                    ul.list-group
+                        li.list-group-item(ng-repeat="agent in agents")
+                            span(ng-class="getAgentStatusClass(agent)") {{agent.status}}
+                            {{agent.name}}
+        div.col-sm-6
+            div.panel.panel-default
+                div.panel-heading
+                    h3.panel-title Task
+                div.panel-body
+                    form.form-horizontal(role="form")
+                        div.form-group
+                            label.col-sm-2.control-label Test Scope
+                            div.col-sm-10
+                                select.form-control(ng-model="task", ng-options="task.name for task in tasks")
+                        div.form-group
+                            label.col-sm-2.control-label Users
+                            div.col-sm-10
+                                input.form-control(ng-model="users")
+                        div.form-group
+                            label.col-sm-2.control-label Rump
+                            div.col-sm-10
+                                input.form-control(ng-model="rump")
+                        div.form-group
+                            label.col-sm-2.control-label Count
+                            div.col-sm-10
+                                input.form-control(ng-model="count")
+                        div.form-group
+                            div.col-sm-offset-2.col-sm-10
+                                button.btn.btn-primary(type="button", ng-click="start()", ng-disabled="!agents.length") Start

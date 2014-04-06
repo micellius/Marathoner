@@ -1,0 +1,39 @@
+body {
+    padding-top: 70px;
+    background-image: url('../images/background.png');
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    float:left;
+    margin: 5px 10px 0 30px;
+}
+
+.navbar-right.navbar-text {
+    margin-right: 20px !important;
+}
+
+svg {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.line {
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+.line.users {
+    stroke: steelblue;
+}
+
+.line.cpu {
+    stroke: green;
+}
