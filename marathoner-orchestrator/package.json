@@ -13,5 +13,5 @@
   "devDependencies": {
     "bower": "0.5.x"
   },
-  "engine": "node >= 0.10.26"
+  "engine": "node >= 0.10.24"
 }
